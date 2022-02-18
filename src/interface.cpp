@@ -5,8 +5,8 @@
 #include <vector>
 #include <sstream>
 
-#include "interface.h"
-#include "colors.h"
+#include "headers/interface.h"
+#include "headers/colors.h"
 
 using std::string;
 using std::vector;
