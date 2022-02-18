@@ -10,12 +10,12 @@ using std::vector;
 #ifndef _interface_H_
 #define _interface_H_
 
-class gameInterface
+class GameInterface
 {
     public:
-    string input(int lenght); // get guess for word
+    string input(const int &lenght); // get guess for word
 
-    void printResult(string currentGuess, vector<int> resultMap);
+    void printResult(const string &currentGuess, const vector<int> &resultMap);
 
 };
 

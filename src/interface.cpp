@@ -14,7 +14,7 @@ using std::cout;
 using std::cin;
 
 
-string gameInterface::input(int length)
+string GameInterface::input(const int &length)
 {   
     string GuessInput;
     bool loop_repeated = false;
@@ -29,17 +29,15 @@ string gameInterface::input(int length)
         system("clear");
 
         cout << "Enter a " << length << " letter word: ";
-
         cin >> GuessInput;
         loop_repeated = true;
-
     } while (static_cast<int>(GuessInput.size()) != length);
 
     return GuessInput;
 }
 
 
-void gameInterface::printResult(string currentGuess, vector<int> resultMap)
+void GameInterface::printResult(const string &currentGuess, const vector<int> &resultMap)
 {
     if (resultMap.size() == currentGuess.size())
     {
@@ -69,7 +67,7 @@ void gameInterface::printResult(string currentGuess, vector<int> resultMap)
             }
 
             coloredChars.push_back(color);
-            strCurrentGuess_at_i = currentGuess.at(i); // cast str.at(i) to char
+            strCurrentGuess_at_i = currentGuess.at(i);
             coloredChars.push_back(strCurrentGuess_at_i);
             coloredChars.push_back(paint::close);
         }

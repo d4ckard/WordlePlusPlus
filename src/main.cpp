@@ -6,6 +6,7 @@
 #include <string>
 
 #include "headers/interface.h"
+#include "headers/solution.h"
 
 using std::cout;
 using std::vector;
@@ -13,13 +14,14 @@ using std::string;
 
 
 int main()
-{
-    gameInterface Interface;
-    
-    vector<int> resultMap = {1, 0, 2, 1, 0};
+{   
+    GameInterface Interface;
+    Solution Solution;
+    Solution.generateSolution();
+
+
     string wort = Interface.input(5);
-
-
+    vector<int> resultMap = Solution.checkGuess(wort);
     Interface.printResult(wort, resultMap);
     
     cout << std::endl;
