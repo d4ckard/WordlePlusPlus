@@ -1,2 +1,2 @@
 # Wrdle++
-C++ text based wordle clone
+Text based Wordle Clone, made with C++ as a learning project
