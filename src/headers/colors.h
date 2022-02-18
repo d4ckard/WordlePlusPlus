@@ -12,11 +12,11 @@ namespace paint
 {
     string close = "\33[0m";
 
-    string yellowBold = "\33[33;1m";
-    string yellow = "\33[33m";
-    string blue = "\33[34m";
-    string green = "\33[32m";
-    string red = "\33[31m";
+    string neutral = "\33[7m";
+    string yellow = "\33[33;7m";
+    string blue = "\33[34;7m";
+    string green = "\33[32;7m";
+    string red = "\33[31;7m";
 }
 
 

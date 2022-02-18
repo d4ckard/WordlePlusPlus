@@ -70,7 +70,7 @@ vector<int> Solution::checkGuess(const string &guess)
                     break;
                 }
             }
-        }
+        } // 'dang, that code looks hot'
     }
 
     return resultMap;

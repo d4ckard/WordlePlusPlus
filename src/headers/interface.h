@@ -13,9 +13,12 @@ using std::vector;
 class GameInterface
 {
     public:
-    string input(const int &lenght); // get guess for word
-
-    void printResult(const string &currentGuess, const vector<int> &resultMap);
+    
+    vector<string> createOutput(const int &game_length, const int &word_length);
+    void updateOutput(vector<string> &output, const string &colored_guess, const int &count);
+    string printOutput(const vector<string> &output,const int &msg_length, const int &length, const string &input_msg);
+    string colorText(const string &currentGuess, const vector<int> &resultMap);
+    void displayGuesses(const string &coloredGuess, vector<string> &output, const int &count);
 
 };
 
