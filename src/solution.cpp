@@ -26,7 +26,7 @@ void Solution::generateSolution()
 }
 
 
-vector<int> Solution::checkGuess(const string &guess)
+vector<int> Solution::mapGuess(const string &guess)
 {
     string tempSolution = solution; // tempSolution, will be edited
     char filler = '0';
@@ -74,4 +74,21 @@ vector<int> Solution::checkGuess(const string &guess)
     }
 
     return resultMap;
+}
+
+
+
+bool Solution::checkGuess(const vector<int> &resultMap)
+{
+    bool correct_guess = true;
+
+    for (int i = 0; i < static_cast<int>(resultMap.size()); i++)
+    {
+        if (resultMap.at(i) != 2)
+        {
+            correct_guess = false;
+        }
+    }
+
+    return correct_guess;
 }

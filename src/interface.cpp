@@ -19,12 +19,18 @@ vector<string> GameInterface::createOutput(const int &game_length, const int &wo
 {
     string empty_line; char empty = ' ';
 
-    empty_line += paint::neutral;
+    
     for (int i = 0; i < word_length; i++)
     {
-        empty_line.push_back(empty);
+        empty_line += paint::neutral;
+        for (int j = 0; j < 3; j++) //  makes each box more wide
+        {
+            empty_line += empty;
+        }
+        empty_line += paint::close;
+        empty_line += empty;
     }
-    empty_line += paint::close;
+    
 
     vector<string> output;
 
@@ -47,41 +53,55 @@ void GameInterface::updateOutput(vector<string> &output, const string &colored_g
 }
 
 
-
-string GameInterface::printOutput(const vector<string> &output, const int &msg_length, const int &length, const string &input_msg)
+void GameInterface::printOutput(const vector<string> &output, const string &spacer)
 {
+    system("clear");
 
-    string space; char empty = ' '; // string consisting of msg_lenght * ' '
-    for (int i = 0; i < msg_length; i++)
-    {
-        space.push_back(empty);
+
+    for (int i = 0; i < static_cast<int>(output.size()); i++)
+    {   
+        cout << "\n" << spacer << output.at(i) << "\n";
     }
+
+}
+
+
+string GameInterface::getInput(const string &input_msg)
+{
+    string guessInput;
+
+    cout << input_msg;
+    cin >> guessInput;
+
+    return guessInput;
+}
+
+
+string GameInterface::printOutput_getInput(const vector<string> &output, const string &spacer, const int &word_length, const string &input_msg)
+{
 
     string guessInput;
 
     do 
     {
-        system("clear");
+    
+        printOutput(output, spacer);
 
-        for (int i = 0; i < static_cast<int>(output.size()); i++)
-        {
-            cout << space << output.at(i) << "\n";
-        }
+        guessInput = getInput(input_msg);
 
-        cout << input_msg;
-        cin >> guessInput;
 
-    } while (static_cast<int>(guessInput.size()) != length);
+    } while (static_cast<int>(guessInput.size()) != word_length);
 
     return guessInput;
-
 }
 
 
 
-string GameInterface::colorText(const string &guess, const vector<int> &resultMap)
+string GameInterface::colorText(const string &guess, const vector<int> &resultMap, const bool &correct_guess)
 {
     string coloredWord;
+
+    char empty = ' '; 
 
     if (resultMap.size() == guess.size())
     {
@@ -95,15 +115,16 @@ string GameInterface::colorText(const string &guess, const vector<int> &resultMa
             switch (resultMap.at(i))
             {
             case 0:
-                color = paint::neutral;
+                color = paint::wrong;
                 break;
 
             case 1:
-                color = paint::yellow;
+                color = paint::corret;
                 break;
 
             case 2:
-                color = paint::blue;
+                if (correct_guess) color = paint::correct_word;
+                else color = paint::correct_spot;
                 break;
             
             default:
@@ -111,8 +132,7 @@ string GameInterface::colorText(const string &guess, const vector<int> &resultMa
             }
 
             coloredChars.push_back(color);
-            strOf_guess_at_i = guess.at(i);
-            coloredChars.push_back(strOf_guess_at_i);
+            strOf_guess_at_i = guess.at(i); coloredChars.push_back(strOf_guess_at_i);
             coloredChars.push_back(paint::close);
         }
 
@@ -120,6 +140,7 @@ string GameInterface::colorText(const string &guess, const vector<int> &resultMa
         for (int i = 0; i < static_cast<int>(coloredChars.size()); i++)
         {   
             coloredWord += coloredChars.at(i);
+            coloredWord += empty; // will make each char in the output wide, as each ascii escape code is pushed back
         }
     }
     return coloredWord;

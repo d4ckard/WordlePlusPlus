@@ -16,7 +16,8 @@ class Solution
 {
     public:
     void generateSolution();
-    vector<int> checkGuess(const string &guess);
+    vector<int> mapGuess(const string &guess);
+    bool checkGuess(const vector<int> &resultMap);
 
     private:
     string solution;
