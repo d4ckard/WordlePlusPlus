@@ -2,10 +2,15 @@
 
 #include <string>
 #include <vector>
+#include <array>
+#include "words.h"
+
 
 
 using std::string;
 using std::vector;
+using std::array;
+
 
 
 #ifndef _solution_H_
@@ -15,14 +20,12 @@ using std::vector;
 class Solution
 {
     public:
-    void generateSolution();
+    void generateSolution( Words &Words);
     vector<int> mapGuess(const string &guess);
     bool checkGuess(const vector<int> &resultMap);
 
     private:
     string solution;
-    vector<string> possible_solutions = {"traum", "farbe", "super", "trees"};
 };
-
 
 #endif

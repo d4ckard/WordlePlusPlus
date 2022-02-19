@@ -7,10 +7,12 @@
 
 #include "headers/interface.h"
 #include "headers/solution.h"
+#include "headers/words.h"
 
 using std::cout;
 using std::vector;
 using std::string;
+
 
 string create_spacer(const string &input_msg)
 {
@@ -31,31 +33,36 @@ int main()
     system("clear");
 
     GameInterface Interface;
-    Solution Solution;
-    Solution.generateSolution();
+    Words Words; Words.set_lists(); // load word lists
+    Solution Solution; Solution.generateSolution(Words);
+    
 
     bool correct_guess = false;
-    int rounds = 0;
     string colored_guess;
+
+    int rounds = 0;
     int word_length = 5;
     int game_length = 6;
+
     string input_msg; input_msg += "\nEnter a "; input_msg += '0' + word_length; input_msg += " letter word: ";
     string spacer = create_spacer(input_msg);
+
     vector<string> output = Interface.createOutput(game_length, word_length);
 
     do 
     {
-        Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all inputs, that have been made
-        string guess = Interface.printOutput_getInput(output, spacer, word_length, input_msg); // displays a menu, to enter wordsd, as well as the output
-
-        vector<int> resultMap = Solution.mapGuess(guess); // checks, if the new input is valid
-        correct_guess = Solution.checkGuess(resultMap);
+        Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all guess's, that have been made
+        string guess = Interface.printOutput_getInput(output, spacer, word_length, input_msg, Words); // displays the output, as well as a menu to enter new guess's
+        
+        
+        vector<int> resultMap = Solution.mapGuess(guess); // checks the guess for correctness
+        correct_guess = Solution.checkGuess(resultMap); // checks if the guess matches the solution
 
         colored_guess = Interface.colorText(guess, resultMap, correct_guess); // return a colored version, of the guess, according to the result map returned by mapGuess()
 
         rounds++;
 
-    } while (!correct_guess && rounds < game_length);
+    } while (!correct_guess && rounds < game_length); // game ends, if the the round limit as been reached, or the guess is correct
 
     Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all inputs, that have been made
     Interface.printOutput(output, spacer);

@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "headers/solution.h"
+#include "headers/words.h"
 
 
 using std::string;
@@ -14,18 +15,21 @@ using std::cout;
 using std::cin;
 
 
-void Solution::generateSolution()
+
+// randomly generate a new solution for the game
+void Solution::generateSolution( Words &Words)
 {
     std::random_device rand; // seed for random-number engine 
     std::mt19937 rng(rand()); // definition for used random-number engine (Mersenne-Twister engine)
-    std::uniform_int_distribution<int> uni(0, (static_cast<int>(possible_solutions.size()) -1)); // guaranteed unbaised output
+    std::uniform_int_distribution<int> uni(0, (Words.sizeOfpossible_solutions() -1)); // guaranteed unbaised output
 
     int randInt = uni(rng); // generating the randInt itself
 
-    solution = possible_solutions.at(randInt); // pick random word of all possible words
+    solution = Words.returnSolution(randInt); // pick random word of all possible words
 }
 
 
+// create map that represents, the correctness of the guess
 vector<int> Solution::mapGuess(const string &guess)
 {
     string tempSolution = solution; // tempSolution, will be edited

@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "words.h"
+
 
 using std::string;
 using std::vector;
@@ -20,7 +22,7 @@ class GameInterface
 
     void printOutput(const vector<string> &output, const string &spacer);
     string getInput(const string &input_msg);
-    string printOutput_getInput(const vector<string> &output, const string &spacer, const int &word_length, const string &input_msg);
+    string printOutput_getInput(const vector<string> &output, const string &spacer, const int &word_length, const string &input_msg, Words &Words);
 
     string colorText(const string &currentGuess, const vector<int> &resultMap, const bool &correct_guess);
 
