@@ -6,9 +6,7 @@ Terminal based Wordle clone, made with c++.
 
 To install this game, it can be downloaded as a binary (either macOs or Linux) and then executed it in a terminal.
 
-Otherwise the repository can be cloned and compiled from source. word_lists.cpp should be compiled to an *.o or *.obj file first,
-as it contains all possible words and takes a while to compile. A compiled version of this file can be found in the bin folder.
-
+Otherwise the repository can be cloned and compiled from source.
 
 ## Usage
 
