@@ -14,18 +14,9 @@ using std::vector;
 using std::string;
 
 
-string create_spacer(const string &input_msg)
-{
-    int msg_length = static_cast<int>(input_msg.size());
 
-    string spacer; char empty = ' '; // string consisting of msg_lenght * ' '
-    for (int i = 0; i < msg_length; i++)
-    {
-        spacer += empty;
-    }
+string create_spacer(const string &input_msg); // create spacer, for dynamic interface
 
-    return spacer;
-}
 
 
 int main()
@@ -39,9 +30,11 @@ int main()
     bool correct_guess = false;
     string colored_guess;
 
-    int rounds = 0;
-    int word_length = 5;
-    int game_length = 6;
+
+    int rounds = 0; // default shoud be 0
+    int word_length = 5; // < -- can be changed (if the words if 'word_lists.cpp' are changed to match the new value)
+    int game_length = 6; // < -- can be changed
+
 
     string input_msg; input_msg += "\nEnter a "; input_msg += '0' + word_length; input_msg += " letter word: ";
     string spacer = create_spacer(input_msg);
@@ -63,14 +56,31 @@ int main()
 
     } while (!correct_guess && rounds < game_length); // game ends, if the the round limit as been reached, or the guess is correct
 
+    
     Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all inputs, that have been made
     Interface.printOutput(output, spacer);
     
-    if (!correct_guess)
+
+    if (!correct_guess) // print correct solution, if it wasn't guessed
     {
         Solution.printSolution(input_msg, Interface); 
     }
 
     cout << std::endl;
     return EXIT_SUCCESS;
+}
+
+
+
+string create_spacer(const string &input_msg)
+{
+    int msg_length = static_cast<int>(input_msg.size());
+
+    string spacer; char empty = ' '; // string consisting of msg_lenght * ' '
+    for (int i = 0; i < msg_length; i++)
+    {
+        spacer += empty;
+    }
+
+    return spacer;
 }
