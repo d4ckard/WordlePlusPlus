@@ -112,7 +112,7 @@ void Solution::printSolution(const string &input_msg, const int &word_lenght, Ga
     string colored_solution = Interface.colorText(solution, solution_resultMap, solution_correct);
 
     // calculate space, needed to align the output with the rest
-    string solution_msg = "The correct solution is:";
+    string solution_msg = "The solution is:";
     int spacer_lenght = static_cast<int>(input_msg.size() - solution_msg.size());
     
     // create spacer string
