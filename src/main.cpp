@@ -35,7 +35,6 @@ int main()
     GameInterface Interface;
     Words Words; Words.set_lists(); // load word lists
     Solution Solution; Solution.generateSolution(Words);
-    
 
     bool correct_guess = false;
     string colored_guess;
@@ -66,6 +65,11 @@ int main()
 
     Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all inputs, that have been made
     Interface.printOutput(output, spacer);
+    
+    if (!correct_guess)
+    {
+        Solution.printSolution(input_msg, Interface); 
+    }
 
     cout << std::endl;
     return EXIT_SUCCESS;

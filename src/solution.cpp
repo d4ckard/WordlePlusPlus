@@ -7,6 +7,7 @@
 
 #include "headers/solution.h"
 #include "headers/words.h"
+#include "headers/interface.h"
 
 
 using std::string;
@@ -40,7 +41,7 @@ vector<int> Solution::mapGuess(const string &guess)
     /*
     list filled with 0's is created
     for loop iterates through each letter in guess and per letter in guess
-    the second for loop iteraties through every letter in the solution
+    the second for loop iterates through every letter in the solution
 
     if the letters match, at the same index in both words, the result map at the same
     index is set to 2
@@ -48,7 +49,7 @@ vector<int> Solution::mapGuess(const string &guess)
     of the guess is set to 1
 
     each time there is a match, the index of the match in the solution is set to 0
-    by doing this, has the effect that each corret letter is counted only once
+    by doing this, has the effect that each correct letter is counted only once
 
     as soon as a match occurs, the second loop is broken, so each currect letter is only
     counted once
@@ -81,7 +82,7 @@ vector<int> Solution::mapGuess(const string &guess)
 }
 
 
-
+// check if guess is correct
 bool Solution::checkGuess(const vector<int> &resultMap)
 {
     bool correct_guess = true;
@@ -95,4 +96,29 @@ bool Solution::checkGuess(const vector<int> &resultMap)
     }
 
     return correct_guess;
+}
+
+
+// display solution, dynamically formated to match  the rest of the outputs
+void Solution::printSolution(const string &input_msg, GameInterface Interface)
+{
+    vector<int> solution_resultMap = {2, 2, 2, 2, 2};
+    bool solution_correct = true;
+    // get colored version of solution
+    string colored_solution = Interface.colorText(solution, solution_resultMap, solution_correct);
+
+    // calculate space, needed to align the output with the rest
+    string solution_msg = "The correct solution is:";
+    int spacer_lenght = static_cast<int>(input_msg.size() - solution_msg.size());
+    
+    // create spacer string
+    string spacer; char empty = ' ';
+    for (int i = 0; i < spacer_lenght; i++)
+    {
+        spacer.push_back(empty);
+    }
+
+    // create final output of the correct solution
+    string solution_output = solution_msg + spacer + colored_solution;
+    cout << "\n" << solution_output;
 }

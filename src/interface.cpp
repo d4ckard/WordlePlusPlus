@@ -81,7 +81,7 @@ string GameInterface::getInput(const string &input_msg)
 
 
 
-// gets input and prints output, until, the output matches the correct word length
+// gets input and prints output, until the output matches the solutions length
 string GameInterface::printOutput_getInput(const vector<string> &output, const string &spacer, const int &word_length, const string &input_msg, Words &Words)
 {
 
@@ -95,13 +95,14 @@ string GameInterface::printOutput_getInput(const vector<string> &output, const s
         guessInput = getInput(input_msg);
 
         valid_input = Words.checkIf_occurs(guessInput);
-    } while (static_cast<int>(guessInput.size()) != word_length && !valid_input);
+
+    } while (static_cast<int>(guessInput.size()) != word_length || !valid_input);
 
     return guessInput;
 }
 
 
-// color the text, according to the 
+// color the text, according to the result map
 string GameInterface::colorText(const string &guess, const vector<int> &resultMap, const bool &correct_guess)
 {
     string coloredWord;
