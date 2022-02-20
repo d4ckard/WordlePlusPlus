@@ -32,8 +32,8 @@ int main()
 
 
     int rounds = 0; // default shoud be 0
-    int word_length = 5; // < -- can be changed (if the words if 'word_lists.cpp' are changed to match the new value)
-    int game_length = 6; // < -- can be changed
+    int word_length = 5; // < -- could be changed (if the words if 'word_lists.cpp' are changed to match the new value)
+    int game_length = 6; // < -- could be changed
 
 
     string input_msg; input_msg += "\nEnter a "; input_msg += '0' + word_length; input_msg += " letter word: ";
@@ -44,7 +44,7 @@ int main()
     do 
     {
         Interface.updateOutput(output, colored_guess, rounds); // updating the output according to all guess's, that have been made
-        string guess = Interface.printOutput_getInput(output, spacer, word_length, input_msg, Words); // displays the output, as well as a menu to enter new guess's
+        string guess = Interface.printOutput_getInput(output, spacer, word_length, input_msg, Words); // displays the output, as well as a menu to enter new guess's; acts as internal do loop
         
         
         vector<int> resultMap = Solution.mapGuess(guess); // checks the guess for correctness
