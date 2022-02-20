@@ -12,7 +12,8 @@ as it contains all possible words and takes a while to compile. A compiled versi
 
 ## Usage
 
-Execute the binary. > : )
+Execute the binary. 
+> : )
 
 
 The rules of the game match the original's rules. 
