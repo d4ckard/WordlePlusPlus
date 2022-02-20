@@ -26,7 +26,7 @@ class Solution
     vector<int> mapGuess(const string &guess); // create map that represents, the correctness of the guess
     bool checkGuess(const vector<int> &resultMap); // check if guess is correct
 
-    void printSolution(const string &input_msg, GameInterface Interface); // display solution, dynamically formated to match  the rest of the outputs
+    void printSolution(const string &input_msg, const int &word_lenght, GameInterface Interface); // display solution, dynamically formated to match  the rest of the outputs
 
     private:
     string solution;
