@@ -2,6 +2,8 @@
 
 Terminal based Wordle clone, made with c++.
 
+[![WordlePlusPlus](https://i.postimg.cc/FsNBMYzF/Screenshot-2022-02-20-at-16-46-02.png)](https://postimg.cc/LhQDf6jG)
+
 ## Installation
 
 To install this game, it can be downloaded as a binary (either macOs or Linux) and then executed it in a terminal.
