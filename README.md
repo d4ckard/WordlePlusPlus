@@ -2,7 +2,7 @@
 
 Terminal based Wordle clone, made with c++.
 
-[![WordlePlusPlus](https://i.postimg.cc/3RqR0sqW/Screenshot-2022-02-20-at-16-46-01.png)](https://postimg.cc/qh80954d)
+[![WordlePlusPlus](https://i.postimg.cc/FsNBMYzF/Screenshot-2022-02-20-at-16-46-02.png)](https://postimg.cc/LhQDf6jG)
 
 ## Installation
 
