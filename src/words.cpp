@@ -48,5 +48,3 @@ void Words::set_lists()
     set_solutions_content();
     set_allowed_content();
 }
-
-

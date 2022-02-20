@@ -100,9 +100,13 @@ bool Solution::checkGuess(const vector<int> &resultMap)
 
 
 // display solution, dynamically formated to match  the rest of the outputs
-void Solution::printSolution(const string &input_msg, GameInterface Interface)
+void Solution::printSolution(const string &input_msg, const int &word_lenght, GameInterface Interface)
 {
-    vector<int> solution_resultMap = {2, 2, 2, 2, 2};
+    vector<int> solution_resultMap;
+    for (int i = 0; i  < word_lenght; i++)
+    {
+        solution_resultMap.push_back(2);
+    }
     bool solution_correct = true;
     // get colored version of solution
     string colored_solution = Interface.colorText(solution, solution_resultMap, solution_correct);

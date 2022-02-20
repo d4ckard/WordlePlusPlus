@@ -1,9 +1,11 @@
 // header for pre compiled file, containing all possible words and solutions
 
 #include <vector>
+#include <array>
 #include <string>
 
 using std::string;
+using std::array;
 
 #ifndef _words_H_
 #define _words_H_
@@ -24,8 +26,8 @@ class Words
     private:
     void set_solutions_content();
     void set_allowed_content();
-    std::vector<string> possible_solutions;
-    std::vector<string> allowed_words;
+    array<string, 2309> possible_solutions;
+    array<string, 12918> allowed_words;
 };
 
 #endif

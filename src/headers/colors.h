@@ -28,6 +28,4 @@ namespace paint
     string correct_word = green + blinking;
 }
 
-
-
 #endif

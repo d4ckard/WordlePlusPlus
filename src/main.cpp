@@ -63,7 +63,7 @@ int main()
 
     if (!correct_guess) // print correct solution, if it wasn't guessed
     {
-        Solution.printSolution(input_msg, Interface); 
+        Solution.printSolution(input_msg, word_length, Interface); 
     }
 
     cout << std::endl;
