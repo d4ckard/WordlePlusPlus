@@ -14,6 +14,7 @@ Otherwise the repository can be cloned and compiled from source.
 
 Execute the binary in your terminal like this: "./__file name/path__". 
 > : )
+
 If you want to compile from source yourselves, execute this in your terminal: "g++ -o __file name/path for the  bin file__ main.cpp interface.cpp solution.cpp words.cpp word_lists.cpp".
 
 
