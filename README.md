@@ -12,8 +12,9 @@ Otherwise the repository can be cloned and compiled from source.
 
 ## Usage
 
-Execute the binary. 
+Execute the binary in your terminal like this: "./_file name/path_". 
 > : )
+If you want to compile from source yourselves, execute this in your terminal: "g++ -o _file name/path for the  bin file_ main.cpp interface.cpp solution.cpp words.cpp word_lists.cpp".
 
 
 The rules of the game match the original's rules. 
