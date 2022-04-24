@@ -6,7 +6,7 @@ Terminal based Wordle clone, made with c++.
 
 ## Installation
 
-To install WordlePlusPlus, follow the detailed [installation guide]()
+To install WordlePlusPlus, follow the detailed [installation guide](https://github.com/d4ckard/WordlePlusPlus/blob/main/INSTALL.md)
 
 Otherwise the repository can be cloned and compiled from source.
 
