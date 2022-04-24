@@ -5,10 +5,10 @@
 There are two ways avaliable to install WordlePlusPlus.
 
 Either way, you will have to clone this repository first, by running ```git clone https://github.com/d4ckard/WordlePlusPlus.git```.
-After that go into the repository via ```cd WordlePlusPlus/```.
+After that move into the repository via ```cd WordlePlusPlus/```.
 
 ## Install the compiled binary file
-If you are on **linux**, you can ```cd``` into ```WordlePlusPlus/bin/```.
+If you are on **linux**, you can move into ```/bin/```.
 
 Now you could just run the binary via ```./wordlePlusPlus```.
 
