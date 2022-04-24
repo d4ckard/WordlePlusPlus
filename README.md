@@ -6,25 +6,15 @@ Terminal based Wordle clone, made with c++.
 
 ## Installation
 
-To install this game, it can be downloaded as a binary (Linux) and then execute it in a terminal.
-To fully install the game to your system run
-```sudo ln -s wordlePlusPlus /usr/local/bin```
-This will create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link) to the executable in your current directory.
+To install WordlePlusPlus, follow the detailed [installation guide]()
 
 Otherwise the repository can be cloned and compiled from source.
 
 ## Usage
 
-Execute the binary in your terminal like this: "./__file_name__". 
-> : )
-
-If you want to compile from source yourselves, execute this in your terminal: "g++ -o __file_name of binary__ main.cpp interface.cpp solution.cpp words.cpp word_lists.cpp".
-
-
-The rules of the game match the original's rules. 
+The rules of the WordlePlusPLus match the [original's](https://www.nytimes.com/games/wordle/index.html) rules. 
 If the entered word, is not allowed (misspelled or unknown) nothing will happen.
 
-By changing 'game_length', the amount of rounds can be changed, dynamically.
-The colors for the different clues in the game can be changed in 'headers/colors.h'.
+The colors representing the different clues in the game can be changed in ```src/headers/colors.h```.
 
-  
+> have fun : )
