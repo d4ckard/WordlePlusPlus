@@ -9,7 +9,7 @@ Terminal based Wordle clone, made with c++.
 To install this game, it can be downloaded as a binary (Linux) and then execute it in a terminal.
 To fully install the game to your system run
 ```sudo ln -s wordlePlusPlus /usr/local/bin```
-This will create a [Link to wikipedia article on symlinks](https://en.wikipedia.org/wiki/Symbolic_link "symlink") to the executable in your current directory.
+This will create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link) to the executable in your current directory.
 
 Otherwise the repository can be cloned and compiled from source.
 
